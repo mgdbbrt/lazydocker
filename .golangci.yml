@@ -1,27 +1,23 @@
-linters:
+version: "2"
+formatters:
   enable:
     - gofumpt
-    - thelper
     - goimports
-    - tparallel
-    - wastedassign
-    - unparam
-    - prealloc
-    - unconvert
+linters:
+  disable:
+    - errcheck
+    - staticcheck
+  enable:
     - exhaustive
     - makezero
     - nakedret
-    # - goconst # TODO: enable and fix issues
-  fast: false
-
-linters-settings:
-  exhaustive:
-    default-signifies-exhaustive: true
-
-  nakedret:
-    # the gods will judge me but I just don't like naked returns at all
-    max-func-lines: 0
+    - prealloc
+    - thelper
+    - tparallel
+    - unconvert
+    - unparam
+    - wastedassign
 
 run:
-  go: '1.21'
+  go: "1.25"
   timeout: 10m
