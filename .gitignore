@@ -5,3 +5,4 @@ Lazydocker.code-workspace
 .idea
 result
 dist
+.direnv
